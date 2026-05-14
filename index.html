@@ -1,24 +1,78 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="hr" class="no-js">
 
 <head>
     <meta charset="UTF-8">
+    <script>document.documentElement.classList.remove('no-js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description"
-        content="DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje – kuće, stanovi, poslovni prostori. Razvodne ploče, rasvjeta, mreže, kamere, portafoni, gromobrani. Kvalitetno i pošteno.">
+    <meta name="description" content="DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje – kuće, stanovi, poslovni prostori. Razvodne ploče, rasvjeta, mreže, kamere, portafoni, gromobrani. Kvalitetno i pošteno.">
     <title>DT Elektrik | Vrhunske Elektroinstalacije | Domagoj Trčak</title>
 
-    <!-- Fonts -->
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://dtelektrik.hr/">
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/logo-dt.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dtelektrik.hr/">
+    <meta property="og:title" content="DT Elektrik | Vrhunske Elektroinstalacije | Domagoj Trčak">
+    <meta property="og:description" content="DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje – kuće, stanovi, poslovni prostori. Razvodne ploče, rasvjeta, mreže, kamere, portafoni, gromobrani. Kvalitetno i pošteno.">
+    <meta property="og:image" content="https://dtelektrik.hr/images/og-image.jpg">
+    <meta property="og:locale" content="hr_HR">
+    <meta property="og:site_name" content="DT Elektrik">
+
+    <!-- Fonts (non-blocking preload) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dist/output.css">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- JSON-LD LocalBusiness / Electrician -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "DT Elektrik",
+      "url": "https://dtelektrik.hr/",
+      "telephone": "+385989236382",
+      "email": "dtelektrik23@gmail.com",
+      "founder": { "@type": "Person", "name": "Domagoj Trčak" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Selnica 101B",
+        "postalCode": "49246",
+        "addressLocality": "Marija Bistrica",
+        "addressCountry": "HR"
+      },
+      "areaServed": { "@type": "Country", "name": "Hrvatska" },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "07:30",
+          "closes": "15:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "00:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/dtelektrik",
+        "https://www.instagram.com/dtelektrik"
+      ],
+      "description": "DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje za kuće, stanove i poslovne prostore.",
+      "priceRange": "$$"
+    }
+    </script>
 
     <style>
         :root {
@@ -27,9 +81,7 @@
             --dark: #0f172a;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -40,72 +92,40 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        ::selection {
-            background-color: #2563eb;
-            color: white;
-        }
+        ::selection { background-color: #2563eb; color: white; }
 
-        /* Premium Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        /* Custom Animations */
+        /* GSAP controls all reveal animations — initial state only, no CSS transitions */
         .reveal-up {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .reveal-up.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
         .reveal-fade {
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
-
         .reveal-fade.active {
             opacity: 1;
         }
 
-        /* Staggered delays */
-        .delay-0 {
-            transition-delay: 0ms;
-        }
+        .delay-0   { transition-delay: 0ms; }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
 
-        .delay-100 {
-            transition-delay: 100ms;
-        }
-
-        .delay-200 {
-            transition-delay: 200ms;
-        }
-
-        .delay-300 {
-            transition-delay: 300ms;
-        }
-
-        .delay-400 {
-            transition-delay: 400ms;
-        }
-
-        /* Premium Glassmorphism */
+        /* Glassmorphism */
         .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
@@ -121,7 +141,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Glowing Blobs for backgrounds */
+        /* Glowing blobs */
         .blob {
             position: absolute;
             filter: blur(80px);
@@ -131,16 +151,11 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                transform: translate(20px, -30px) scale(1.1);
-            }
+            0%   { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20px, -30px) scale(1.1); }
         }
 
-        /* Gradient Text */
+        /* Gradient text */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
@@ -148,36 +163,25 @@
             background-image: linear-gradient(to right, var(--primary), var(--primary-light));
         }
 
-        /* Image Hover Zoom */
-        .img-zoom-container {
-            overflow: hidden;
-        }
+        /* Image hover zoom */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom-container img { transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .img-zoom-container:hover img { transform: scale(1.05); }
 
-        .img-zoom-container img {
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .img-zoom-container:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Mobile menu transition */
+        /* Mobile menu */
         .mobile-menu {
             transition: all 0.3s ease-in-out;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
         }
-
         .mobile-menu.open {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        #proj-track::-webkit-scrollbar {
-            display: none;
-        }
+        #proj-track::-webkit-scrollbar { display: none; }
 
         #cookie-banner { visibility: hidden; }
     </style>
@@ -197,47 +201,37 @@
 
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#usluge"
-                        class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Usluge</a>
-                    <a href="#o-nama"
-                        class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">O
-                        nama</a>
-                    <a href="#projekti"
-                        class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Projekti</a>
-                    <a href="#kontakt"
-                        class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Kontakt</a>
-                    <a href="#kontakt"
-                        class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transform hover:-translate-y-0.5">
+                    <a href="#usluge" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Usluge</a>
+                    <a href="#o-nama" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">O nama</a>
+                    <a href="#projekti" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Projekti</a>
+                    <a href="#kontakt" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Kontakt</a>
+                    <a href="#kontakt" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transform hover:-translate-y-0.5">
                         Zatraži ponudu
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center gap-2">
-                    <a href="tel:+385989236382" class="flex items-center gap-1.5 bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all"><i data-lucide="phone" class="w-4 h-4"></i> Nazovi odmah</a>
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-900">
-                        <i id="menu-icon" data-lucide="menu" class="h-6 w-6"></i>
-                        <i id="close-icon" data-lucide="x" class="h-6 w-6 hidden"></i>
+                    <a href="tel:+385989236382" class="flex items-center gap-1.5 bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-.66a2 2 0 0 1 2.11.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.18z"/></svg>
+                        Nazovi odmah
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Otvori navigacijski izbornik" aria-expanded="false" class="p-2 rounded-md text-slate-900">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 hidden" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div id="mobile-menu"
-            class="mobile-menu absolute top-full left-0 w-full border-t border-slate-200 shadow-xl bg-white/95 backdrop-blur-md">
+        <div id="mobile-menu" class="mobile-menu absolute top-full left-0 w-full border-t border-slate-200 shadow-xl bg-white/95 backdrop-blur-md">
             <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#usluge"
-                    class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Usluge</a>
-                <a href="#o-nama"
-                    class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">O
-                    nama</a>
-                <a href="#projekti"
-                    class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Projekti</a>
-                <a href="#kontakt"
-                    class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Kontakt</a>
-                <a href="#kontakt"
-                    class="mobile-nav-link block w-full text-center mt-4 bg-blue-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-blue-700">
+                <a href="#usluge" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Usluge</a>
+                <a href="#o-nama" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">O nama</a>
+                <a href="#projekti" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Projekti</a>
+                <a href="#kontakt" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Kontakt</a>
+                <a href="#kontakt" class="mobile-nav-link block w-full text-center mt-4 bg-blue-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-blue-700">
                     Zatraži ponudu
                 </a>
             </div>
@@ -247,25 +241,26 @@
     <main>
         <!-- Hero -->
         <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
-            <!-- Background Blobs & Image Overlay -->
             <div class="absolute inset-0 z-0">
-                <div
-                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2669&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay">
+                <!-- Responsive hero bg image (replaces bg-[url()] for bandwidth savings) -->
+                <div class="absolute inset-0 opacity-30 mix-blend-overlay overflow-hidden">
+                    <picture>
+                        <source media="(max-width: 640px)"  srcset="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=75&w=640&auto=format&fit=crop">
+                        <source media="(max-width: 1280px)" srcset="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1280&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2669&auto=format&fit=crop"
+                             alt="" width="2669" height="1779" class="w-full h-full object-cover object-center" fetchpriority="high" aria-hidden="true">
+                    </picture>
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
-
-                <!-- Animated glowing blobs -->
                 <div class="blob bg-blue-600 w-96 h-96 rounded-full top-1/4 left-0 -translate-x-1/2"></div>
-                <div class="blob bg-cyan-400 w-80 h-80 rounded-full bottom-0 right-1/4 translate-y-1/2"
-                    style="animation-delay: 2s;"></div>
+                <div class="blob bg-cyan-400 w-80 h-80 rounded-full bottom-0 right-1/4 translate-y-1/2" style="animation-delay:2s;"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
 
                     <div class="max-w-2xl">
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight reveal-up delay-100">
+                        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight reveal-up delay-100">
                             Profesionalne elektroinstalacije <br />
                             <span class="text-gradient">bez kompromisa.</span>
                         </h1>
@@ -276,15 +271,12 @@
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-4 reveal-up delay-300">
-                            <a href="#kontakt"
-                                class="group relative flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-medium overflow-hidden transition-all hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]">
+                            <a href="#kontakt" class="group relative flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-medium overflow-hidden transition-all hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]">
                                 <span class="relative z-10">Zatraži besplatnu procjenu</span>
-                                <i data-lucide="arrow-right"
-                                    class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                             </a>
-                            <a href="tel:+385989236382"
-                                class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-medium backdrop-blur-sm transition-all">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            <a href="tel:+385989236382" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-medium backdrop-blur-sm transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-.66a2 2 0 0 1 2.11.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.18z"/></svg>
                                 Nazovi odmah
                             </a>
                         </div>
@@ -292,24 +284,24 @@
                         <!-- Trust indicators -->
                         <div class="mt-12 flex items-center gap-6 text-sm text-slate-400 reveal-up delay-400">
                             <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
                                 <span>Licencirani majstori</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
                                 <span>Garancija na rad</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right side floating elements (Premium touch) -->
+                    <!-- Right side hero image -->
                     <div class="hidden lg:block relative h-[600px] reveal-fade delay-300">
-
-                        <!-- Main Hero Image -->
-                        <div
-                            class="absolute inset-y-10 right-10 left-20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl img-zoom-container">
-                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2670&auto=format&fit=crop"
-                                alt="Električar na radu" class="w-full h-full object-cover" />
+                        <div class="absolute inset-y-10 right-10 left-20 rounded-3xl overflow-hidden border border-white/10 shadow-2xl img-zoom-container">
+                            <picture>
+                                <source media="(max-width: 1280px)" srcset="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1280&auto=format&fit=crop">
+                                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2670&auto=format&fit=crop"
+                                     alt="Električar na radu" width="2670" height="1780" class="w-full h-full object-cover" fetchpriority="high" loading="eager">
+                            </picture>
                         </div>
                     </div>
 
@@ -326,108 +318,83 @@
                         Elektroinstalaterske usluge
                     </h2>
                     <p class="text-slate-600 text-lg max-w-xl mx-auto reveal-up delay-100">
-                        Pružamo sveobuhvatne usluge, od jednostavnih popravaka do složenih industrijskih instalacija, uvijek fokusirani na sigurnost i preciznost.
+                        Pružamo sveobuhvatne usluge, od jednostavnih popravaka do složenih industrijskih instalacija,
+                        uvijek fokusirani na sigurnost i preciznost.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 — Elektroinstalacije jake struje (najprofitabilnija) -->
-                    <div
-                        class="group relative bg-blue-50 p-8 rounded-3xl border border-blue-200 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)] hover:-translate-y-2 reveal-up delay-100 flex flex-col">
-                        <span
-                            class="absolute top-5 right-5 text-xs font-semibold bg-blue-600 text-white px-3 py-1 rounded-full">Naša
-                            specijalnost</span>
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="zap" class="w-8 h-8"></i>
+                    <!-- Service 1 -->
+                    <div class="group relative bg-blue-50 p-8 rounded-3xl border border-blue-200 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)] hover:-translate-y-2 reveal-up delay-100 flex flex-col">
+                        <span class="absolute top-5 right-5 text-xs font-semibold bg-blue-600 text-white px-3 py-1 rounded-full">Naša specijalnost</span>
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Elektroinstalacije jake struje</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Razvodni ormari, osigurači, utičnice i rasvjeta u
-                            kućama, stanovima i poslovnim prostorima — izvedeno kako treba, bez fušarenja.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Razvodni ormari, osigurači, utičnice i rasvjeta u kućama, stanovima i poslovnim prostorima — izvedeno kako treba, bez fušarenja.</p>
                         <a href="jake-struje.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
-                    <!-- Service 2 — Elektroinstalacije slabe struje -->
-                    <div
-                        class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-200 flex flex-col">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="wifi" class="w-8 h-8"></i>
+                    <!-- Service 2 -->
+                    <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-200 flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" x2="12.01" y1="20" y2="20"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Elektroinstalacije slabe struje</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Strukturno kabliranje, UTP mreže i internet
-                            instalacije za pouzdanu mrežnu infrastrukturu u svakom prostoru.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Strukturno kabliranje, UTP mreže i internet instalacije za pouzdanu mrežnu infrastrukturu u svakom prostoru.</p>
                         <a href="slabe-struje.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
-                    <!-- Service 3 — Videonadzor -->
-                    <div
-                        class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-300 flex flex-col">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="camera" class="w-8 h-8"></i>
+                    <!-- Service 3 -->
+                    <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-300 flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Videonadzor</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Montaža i konfiguracija sustava kamera za nadzor
-                            doma i poslovnog prostora — pouzdano i diskretno.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Montaža i konfiguracija sustava kamera za nadzor doma i poslovnog prostora — pouzdano i diskretno.</p>
                         <a href="videonadzor.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
-                    <!-- Service 4 — Alarmni sustavi & Portafoni -->
-                    <div
-                        class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-100 flex flex-col">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="shield" class="w-8 h-8"></i>
+                    <!-- Service 4 -->
+                    <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-100 flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Alarmi, portafoni i videoparlafoni</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Postavljanje alarmnih sustava, portafona i
-                            videoparlafona za potpunu sigurnost i kontrolu pristupa vašem objektu.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Postavljanje alarmnih sustava, portafona i videoparlafona za potpunu sigurnost i kontrolu pristupa vašem objektu.</p>
                         <a href="alarmi-portafoni.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
-                    <!-- Service 5 — Gromobrani -->
-                    <div
-                        class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-200 flex flex-col">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="cloud-lightning" class="w-8 h-8"></i>
+                    <!-- Service 5 -->
+                    <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-200 flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Izrada i montaža gromobrana</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Projektiranje, izrada i postavljanje gromobranske
-                            zaštite za kuće, poslovne i industrijske objekte prema važećim normama.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Projektiranje, izrada i postavljanje gromobranske zaštite za kuće, poslovne i industrijske objekte prema važećim normama.</p>
                         <a href="gromobrani.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
-                    <!-- Service 6 — Održavanje, ispitivanje i adaptacije -->
-                    <div
-                        class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-300 flex flex-col">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="wrench" class="w-8 h-8"></i>
+                    <!-- Service 6 -->
+                    <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 reveal-up delay-300 flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Održavanje, ispitivanje i adaptacije</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Ispitivanje i mjerenje instalacija, otklanjanje
-                            kvarova, redovito održavanje te adaptacije i nadogradnje postojećih sustava.</p>
+                        <p class="text-slate-600 leading-relaxed mb-6">Ispitivanje i mjerenje instalacija, otklanjanje kvarova, redovito održavanje te adaptacije i nadogradnje postojećih sustava.</p>
                         <a href="odrzavanje.html" class="inline-flex items-center text-blue-600 font-medium group/link mt-auto">
                             Saznaj više
-                            <i data-lucide="chevron-right"
-                                class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
                     </div>
                 </div>
@@ -442,27 +409,25 @@
                     <!-- Image Side -->
                     <div class="relative reveal-fade order-2 lg:order-1">
                         <div class="relative rounded-3xl overflow-hidden img-zoom-container z-10 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2670&auto=format&fit=crop"
-                                alt="Domagoj Trčak - DT Elektrik" class="w-full h-[600px] object-cover" />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                            <picture>
+                                <source media="(max-width: 640px)"  srcset="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=75&w=640&auto=format&fit=crop">
+                                <source media="(max-width: 1280px)" srcset="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1280&auto=format&fit=crop">
+                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2670&auto=format&fit=crop"
+                                     alt="Domagoj Trčak - DT Elektrik" width="2670" height="1780" class="w-full h-[600px] object-cover" loading="lazy">
+                            </picture>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
                                 <div class="text-white">
                                     <p class="font-bold text-2xl">Domagoj Trčak</p>
                                     <p class="text-blue-300">Vlasnik & Glavni radnik</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Decorative background element -->
-                        <div
-                            class="absolute -top-10 -left-10 w-full h-full bg-blue-600/10 rounded-3xl z-0 transform -rotate-3">
-                        </div>
+                        <div class="absolute -top-10 -left-10 w-full h-full bg-blue-600/10 rounded-3xl z-0 transform -rotate-3"></div>
                     </div>
 
                     <!-- Text Side -->
                     <div class="relative z-10 order-1 lg:order-2">
-                        <span
-                            class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3 reveal-up">O
-                            Nama</span>
+                        <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3 reveal-up">O Nama</span>
                         <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 reveal-up delay-100">
                             Kvaliteta utkana u svaku žicu.
                         </h2>
@@ -483,7 +448,7 @@
                         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-up delay-300">
                             <div class="bg-blue-600 text-white rounded-2xl p-5 flex gap-4 items-start shadow-lg shadow-blue-200">
                                 <div class="bg-white/20 p-2.5 rounded-xl shrink-0">
-                                    <i data-lucide="award" class="w-6 h-6"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg leading-tight">Licencirani & Certificirani</h4>
@@ -492,7 +457,7 @@
                             </div>
                             <div class="bg-emerald-500 text-white rounded-2xl p-5 flex gap-4 items-start shadow-lg shadow-emerald-200">
                                 <div class="bg-white/20 p-2.5 rounded-xl shrink-0">
-                                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg leading-tight">Garancija na rad</h4>
@@ -508,23 +473,22 @@
 
         <!-- Stats -->
         <section class="py-20 bg-blue-600 relative overflow-hidden">
-            <!-- Decorative background -->
             <div class="absolute inset-0 opacity-10">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M0 40L40 0H20L0 20M40 40V20L20 40" fill="none" stroke="currentColor"
-                                stroke-width="2" />
+                            <path d="M0 40L40 0H20L0 20M40 40V20L20 40" fill="none" stroke="currentColor" stroke-width="2"/>
                         </pattern>
                     </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                    <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
                 </svg>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-white/20 text-center">
                     <div class="p-4 reveal-up delay-0">
-                        <div class="flex justify-center mb-4 text-blue-200"><i data-lucide="users" class="w-6 h-6"></i>
+                        <div class="flex justify-center mb-4 text-blue-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
                         <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">
                             <span class="counter" data-target="200">0</span>+
@@ -532,7 +496,8 @@
                         <div class="text-blue-100 font-medium">Zadovoljnih klijenata</div>
                     </div>
                     <div class="p-4 reveal-up delay-100">
-                        <div class="flex justify-center mb-4 text-blue-200"><i data-lucide="award" class="w-6 h-6"></i>
+                        <div class="flex justify-center mb-4 text-blue-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
                         </div>
                         <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">
                             <span class="counter" data-target="10">0</span>+
@@ -540,21 +505,17 @@
                         <div class="text-blue-100 font-medium">Godina iskustva</div>
                     </div>
                     <div class="p-4 reveal-up delay-200">
-                        <div class="flex justify-center mb-4 text-blue-200"><i data-lucide="shield-check"
-                                class="w-6 h-6"></i>
+                        <div class="flex justify-center mb-4 text-blue-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                         </div>
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">
-                            100%
-                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">100%</div>
                         <div class="text-blue-100 font-medium">Garancija na rad</div>
                     </div>
                     <div class="p-4 reveal-up delay-300">
-                        <div class="flex justify-center mb-4 text-blue-200"><i data-lucide="user-check"
-                                class="w-6 h-6"></i>
+                        <div class="flex justify-center mb-4 text-blue-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
                         </div>
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">
-                            1/1
-                        </div>
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-mono tracking-tight">1/1</div>
                         <div class="text-blue-100 font-medium">Licencirani majstor</div>
                     </div>
                 </div>
@@ -563,227 +524,99 @@
 
         <!-- Projects -->
         <section id="projekti" class="py-24 bg-slate-50 relative overflow-hidden">
-            <div
-                class="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl -mr-20 -mt-20 opacity-50 pointer-events-none">
-            </div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl -mr-20 -mt-20 opacity-50 pointer-events-none"></div>
 
-            <!-- Header -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center mb-10 md:mb-14 lg:mb-16">
-                <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3 reveal-up">Naši
-                    radovi</span>
+                <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3 reveal-up">Naši radovi</span>
                 <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4 reveal-up delay-100">
                     Projekti na koje smo ponosni
                 </h2>
                 <p class="text-slate-600 text-lg max-w-xl mx-auto reveal-up delay-200">
-                    Pogledajte dio naših nedavnih radova s terena. Od jednostavnih popravaka do kompleksnih
-                    elektroinstalacija.
+                    Pogledajte dio naših nedavnih radova s terena. Od jednostavnih popravaka do kompleksnih elektroinstalacija.
                 </p>
             </div>
 
-            <!-- Full-width carousel wrapper with side arrows -->
             <div class="relative">
-                <button id="proj-prev"
-                    class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-all shadow-md disabled:opacity-30 disabled:cursor-default">
-                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <button id="proj-prev" aria-label="Prethodna slika" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-all shadow-md disabled:opacity-30 disabled:cursor-default">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                 </button>
-                <button id="proj-next"
-                    class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-all shadow-md disabled:opacity-30 disabled:cursor-default">
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <button id="proj-next" aria-label="Sljedeća slika" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-all shadow-md disabled:opacity-30 disabled:cursor-default">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </button>
 
-                <!-- Full-width carousel track -->
                 <div id="proj-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-5"
-                    style="scrollbar-width: none; -ms-overflow-style: none; padding-left: max(1rem, calc((100vw - 80rem) / 2 + 2rem)); padding-right: 2rem;">
+                     style="scrollbar-width:none;-ms-overflow-style:none;padding-left:max(1rem,calc((100vw - 80rem) / 2 + 2rem));padding-right:2rem;">
 
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/1.webp" alt="LED rasvjeta u industrijskom prostoru"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/2.webp" alt="Postavljanje kabelskih kanala u hali"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/3.webp" alt="Postavljanje cijevi u temeljnoj ploči"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/4.webp" alt="Elektroinstalacije u novogradnji"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/5.webp" alt="Razvod elektro cijevi po podu"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/6.webp" alt="Instalacija kružne rasvjete u povijesnoj zgradi"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/7.webp" alt="Rasvjeta u povijesnom prostoru"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/8.webp" alt="Instalacija javne rasvjete"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/9.webp" alt="Javna rasvjeta u parku"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/10.webp" alt="Elektroinstalacije pri izgradnji"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/11.webp" alt="Mrežni ormar s patch panel sustavom"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/12.webp" alt="Elektroinstalacije u industrijskoj hali"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/13.webp" alt="Kabelski kanali i rasvjeta u hali"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/14.webp" alt="Elektroinstalacije u stanu u izgradnji"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/15.webp" alt="Priprema za ugradnju ugradnih svjetiljki"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/16.webp" alt="LED rasvjeta izložbenog elementa"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/17.webp" alt="Instalacija reklamnog natpisa"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/18.webp" alt="Postavljanje LED traka na policu"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/19.webp" alt="Završena polica s LED rasvjetom"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]">
-                        <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
-                            <img src="images/projekti/20.webp" alt="Elektroinstalacije u kuhinji"
-                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                        </div>
-                    </div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/1.webp"  alt="LED rasvjeta u industrijskom prostoru"         width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/2.webp"  alt="Postavljanje kabelskih kanala u hali"           width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/3.webp"  alt="Postavljanje cijevi u temeljnoj ploči"          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/4.webp"  alt="Elektroinstalacije u novogradnji"               width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/5.webp"  alt="Razvod elektro cijevi po podu"                  width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/6.webp"  alt="Instalacija kružne rasvjete u povijesnoj zgradi" width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/7.webp"  alt="Rasvjeta u povijesnom prostoru"                  width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/8.webp"  alt="Instalacija javne rasvjete"                      width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/9.webp"  alt="Javna rasvjeta u parku"                          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/10.webp" alt="Elektroinstalacije pri izgradnji"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/11.webp" alt="Mrežni ormar s patch panel sustavom"             width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/12.webp" alt="Elektroinstalacije u industrijskoj hali"         width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/13.webp" alt="Kabelski kanali i rasvjeta u hali"               width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/14.webp" alt="Elektroinstalacije u stanu u izgradnji"          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/15.webp" alt="Priprema za ugradnju ugradnih svjetiljki"        width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/16.webp" alt="LED rasvjeta izložbenog elementa"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/17.webp" alt="Instalacija reklamnog natpisa"                   width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/18.webp" alt="Postavljanje LED traka na policu"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/19.webp" alt="Završena polica s LED rasvjetom"                 width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/20.webp" alt="Elektroinstalacije u kuhinji"                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
                 </div>
+            </div>
 
-            </div><!-- end carousel wrapper -->
-
-            <!-- Dot indicators -->
             <div id="proj-dots" class="mt-8 flex justify-center gap-2 flex-wrap px-4"></div>
         </section>
 
         <!-- Contact -->
         <section id="kontakt" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
                 <div class="grid lg:grid-cols-5 gap-16">
 
-                    <!-- Contact Text -->
                     <div class="lg:col-span-2 reveal-up order-1 lg:order-1">
-                        <span
-                            class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3">Kontakt</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
-                            Trebate električara?
-                        </h2>
+                        <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3">Kontakt</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Trebate električara?</h2>
                         <p class="text-slate-600 text-lg mb-8 lg:mb-0">
-                            Ispunite formu ili nas kontaktirajte izravno. Odgovaramo u najkraćem mogućem roku sa
-                            stručnim savjetom i ponudom.
+                            Ispunite formu ili nas kontaktirajte izravno. Odgovaramo u najkraćem mogućem roku sa stručnim savjetom i ponudom.
                         </p>
                     </div>
 
-                    <!-- Contact Form -->
                     <div class="lg:col-span-3 lg:row-span-2 reveal-up delay-200 order-2 lg:order-2">
-                        <div
-                            class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm relative overflow-hidden h-full">
-
-                            <!-- Subtle background element inside form -->
-                            <div
-                                class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl -mr-20 -mt-20 opacity-50 pointer-events-none">
+                        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm relative overflow-hidden h-full">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl -mr-20 -mt-20 opacity-50 pointer-events-none"></div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6 relative z-10">Zatražite besplatnu ponudu</h3>
+                            <div id="form-success" class="hidden py-8 text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 text-green-500 mx-auto mb-4" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Hvala! Javit ćemo se uskoro.</h4>
+                                <p class="text-slate-500">Vaš upit je uspješno poslan. Odgovorit ćemo u najkraćem mogućem roku.</p>
                             </div>
-
-                            <h3 class="text-2xl font-bold text-slate-900 mb-6 relative z-10">Zatražite besplatnu ponudu
-                            </h3>
-
-                            <form class="space-y-6 relative z-10" onsubmit="event.preventDefault()">
+                            <form id="contact-form" class="space-y-6 relative z-10" action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="7d048efb-da2b-4603-ba37-f6e2e49aede8">
+                                <input type="hidden" name="subject" id="form-subject" value="UPIT: Odabir usluge">
+                                <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
                                 <div class="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label class="block text-sm font-medium text-slate-700 mb-2">Ime i
-                                            prezime</label>
-                                        <input type="text"
-                                            class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none"
-                                            placeholder="Ivan Horvat" />
+                                        <label class="block text-sm font-medium text-slate-700 mb-2">Ime i prezime</label>
+                                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none" placeholder="Ivan Horvat">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-slate-700 mb-2">Telefon</label>
-                                        <input type="tel"
-                                            class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none"
-                                            placeholder="+385 9X XXX XXXX" />
+                                        <input type="tel" name="phone" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none" placeholder="+385 9X XXX XXXX">
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-2">Email adresa</label>
-                                    <input type="email"
-                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none"
-                                        placeholder="ivan@primjer.hr" />
+                                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none" placeholder="ivan@primjer.hr">
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-2">Vrsta usluge</label>
-                                    <select
-                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none appearance-none">
-                                        <option>Odaberite uslugu...</option>
+                                    <select name="service" id="service-select" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none appearance-none">
+                                        <option value="">Odaberite uslugu...</option>
                                         <option>Elektroinstalacije jake struje</option>
                                         <option>Elektroinstalacije slabe struje</option>
                                         <option>Videonadzor (kamere)</option>
@@ -796,73 +629,51 @@
                                         <option>Drugo</option>
                                     </select>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-2">Opis radova</label>
-                                    <textarea rows="4"
-                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none resize-none"
-                                        placeholder="Ukratko opišite što trebate..."></textarea>
+                                    <textarea rows="4" name="message" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all outline-none resize-none" placeholder="Ukratko opišite što trebate..."></textarea>
                                 </div>
-
-                                <button type="submit"
-                                    class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                                    Pošalji upit <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                <div id="form-error" class="hidden text-red-600 text-sm py-2">Nešto je pošlo po krivu. Pokušajte ponovno ili nas nazovite.</div>
+                                <button id="contact-submit" type="submit" class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                    <span id="submit-label">Pošalji upit</span>
+                                    <svg id="submit-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                    <svg id="submit-spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 hidden animate-spin" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
                                 </button>
                             </form>
                         </div>
                     </div>
 
-                    <!-- Contact Links -->
                     <div class="lg:col-span-2 reveal-up order-3 lg:order-3 space-y-4">
-                        <a href="tel:+385989236382"
-                            class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
-                            <div
-                                class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
-                                <i data-lucide="phone" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        <a href="tel:+385989236382" class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
+                            <div class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 group-hover:scale-110 transition-transform" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-.66a2 2 0 0 1 2.11.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.18z"/></svg>
                             </div>
                             <div>
-                                <h4
-                                    class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">
-                                    Telefon</h4>
-                                <span class="text-slate-600 group-hover:text-blue-600 transition-colors">+385 98 923
-                                    6382</span>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">Telefon</h4>
+                                <span class="text-slate-600 group-hover:text-blue-600 transition-colors">+385 98 923 6382</span>
                             </div>
                         </a>
 
-                        <a href="mailto:dtelektrik23@gmail.com"
-                            class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
-                            <div
-                                class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
-                                <i data-lucide="mail" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        <a href="mailto:dtelektrik23@gmail.com" class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
+                            <div class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 group-hover:scale-110 transition-transform" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             </div>
                             <div>
-                                <h4
-                                    class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">
-                                    Email</h4>
-                                <span
-                                    class="text-slate-600 group-hover:text-blue-600 transition-colors block">dtelektrik23@gmail.com</span>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">Email</h4>
+                                <span class="text-slate-600 group-hover:text-blue-600 transition-colors block">dtelektrik23@gmail.com</span>
                             </div>
                         </a>
 
-                        <a href="https://maps.google.com/?q=Selnica+101B,+49246+Marija+Bistrica" target="_blank"
-                            rel="noopener noreferrer"
-                            class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
-                            <div
-                                class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
-                                <i data-lucide="map-pin" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                        <a href="https://maps.google.com/?q=Selnica+101B,+49246+Marija+Bistrica" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 group p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md transition-all cursor-pointer">
+                            <div class="bg-blue-50 group-hover:bg-blue-600 group-hover:text-white p-3 rounded-xl text-blue-600 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 group-hover:scale-110 transition-transform" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
-                                <h4
-                                    class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">
-                                    Lokacija</h4>
-                                <span class="text-slate-600 group-hover:text-blue-600 transition-colors block">Selnica
-                                    101B, 49246 Marija Bistrica</span>
-                                <p class="text-sm text-slate-400 mt-1">Radimo na području cijele regije</p>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">Lokacija</h4>
+                                <span class="text-slate-600 group-hover:text-blue-600 transition-colors block">Selnica 101B, 49246 Marija Bistrica</span>
                             </div>
                         </a>
                     </div>
-
-
 
                 </div>
             </div>
@@ -871,11 +682,7 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 pt-20 pb-10 border-t border-white/10 relative overflow-hidden">
-
-        <!-- Background glow -->
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent">
-        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -883,36 +690,27 @@
                 <div class="lg:col-span-1">
                     <img src="images/logo-dt.svg" alt="DT Elektrik" class="h-16 w-auto mb-6" style="filter: brightness(0) invert(1);">
                     <p class="text-slate-400 mb-6 leading-relaxed">
-                        Sve vrste elektroinstalacija jake i slabe struje za kuće, stanove i poslovne prostore.
-                        Pošteno, kvalitetno i na vrijeme.
+                        Sve vrste elektroinstalacija jake i slabe struje za kuće, stanove i poslovne prostore. Pošteno, kvalitetno i na vrijeme.
                     </p>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Usluge</h4>
                     <ul class="space-y-4">
-                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Jake
-                                struje</a></li>
-                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Slabe struje
-                                & mreže</a></li>
-                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Videonadzor &
-                                alarmi</a></li>
-                        <li><a href="#usluge"
-                                class="text-slate-400 hover:text-blue-400 transition-colors">Gromobrani</a></li>
+                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Jake struje</a></li>
+                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Slabe struje & mreže</a></li>
+                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Videonadzor & alarmi</a></li>
+                        <li><a href="#usluge" class="text-slate-400 hover:text-blue-400 transition-colors">Gromobrani</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Tvrtka</h4>
                     <ul class="space-y-4">
-                        <li><a href="#o-nama" class="text-slate-400 hover:text-blue-400 transition-colors">O nama</a>
-                        </li>
-                        <li><a href="#projekti"
-                                class="text-slate-400 hover:text-blue-400 transition-colors">Projekti</a></li>
-                        <li><a href="#kontakt" class="text-slate-400 hover:text-blue-400 transition-colors">Kontakt</a>
-                        </li>
-                        <li><a href="#" class="text-slate-400 hover:text-blue-400 transition-colors">Uvjeti
-                                poslovanja</a></li>
+                        <li><a href="#o-nama"   class="text-slate-400 hover:text-blue-400 transition-colors">O nama</a></li>
+                        <li><a href="#projekti" class="text-slate-400 hover:text-blue-400 transition-colors">Projekti</a></li>
+                        <li><a href="#kontakt"  class="text-slate-400 hover:text-blue-400 transition-colors">Kontakt</a></li>
+                        <li><a href="/uvjeti-poslovanja.html" class="text-slate-400 hover:text-blue-400 transition-colors">Uvjeti poslovanja</a></li>
                     </ul>
                 </div>
 
@@ -923,6 +721,10 @@
                             <span>Pon - Pet:</span>
                             <span class="text-white">07:30 - 15:30</span>
                         </li>
+                        <li class="flex justify-between pb-2">
+                            <span>Sub - Ned:</span>
+                            <span>Zatvoreno</span>
+                        </li>
                     </ul>
                 </div>
 
@@ -931,14 +733,13 @@
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p id="copyright-year" class="text-slate-500 text-sm"></p>
                 <div class="text-slate-500 text-sm flex gap-4">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/uvjeti-poslovanja.html" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-6 left-6 max-w-sm bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-2xl p-6 z-50">
         <h3 class="text-gray-900 font-medium text-lg mb-2">Koristimo kolačiće 🍪</h3>
@@ -946,142 +747,100 @@
             Ova stranica koristi kolačiće kako bi osigurala najbolje moguće korisničko iskustvo. Nastavkom pregleda slažete se s korištenjem kolačića.
         </p>
         <div class="flex gap-3">
-            <button id="accept-cookies" class="flex-1 bg-gray-900 text-white text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-gray-800 transition-colors duration-200">
-                Prihvaćam sve
-            </button>
-            <button id="decline-cookies" class="flex-1 bg-gray-100 text-gray-700 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-gray-200 transition-colors duration-200">
-                Samo nužni
-            </button>
+            <button id="accept-cookies"  aria-label="Prihvati sve kolačiće"         class="flex-1 bg-gray-900 text-white text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-gray-800 transition-colors duration-200">Prihvaćam sve</button>
+            <button id="decline-cookies" aria-label="Prihvati samo nužne kolačiće" class="flex-1 bg-gray-100 text-gray-700 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-gray-200 transition-colors duration-200">Samo nužni</button>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
 
-        // Set Copyright Year
-        document.getElementById('copyright-year').textContent = `© ${new Date().getFullYear()} DT Elektrik (Domagoj Trčak). Sva prava pridržana.`;
+        // ─── Copyright Year ───────────────────────────────────────────────────────
+        document.getElementById('copyright-year').textContent =
+            `© ${new Date().getFullYear()} DT Elektrik (Domagoj Trčak). Sva prava pridržana.`;
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
+        // ─── Navbar — rAF-throttled scroll listener ───────────────────────────────
+        const navbar   = document.getElementById('navbar');
         const navLinks = document.querySelectorAll('.nav-link');
-        const logoImg = document.getElementById('logo-img');
+        const logoImg  = document.getElementById('logo-img');
+        let navTicking = false;
 
         function updateNavbar() {
             if (window.scrollY > 50) {
                 navbar.classList.add('glass-panel', 'py-3', 'shadow-sm');
                 navbar.classList.remove('bg-transparent', 'py-5');
                 logoImg.style.filter = '';
-                navLinks.forEach(link => {
-                    link.classList.remove('lg:text-slate-200');
-                });
+                navLinks.forEach(l => l.classList.remove('lg:text-slate-200'));
             } else {
                 navbar.classList.remove('glass-panel', 'py-3', 'shadow-sm');
                 navbar.classList.add('bg-transparent', 'py-5');
                 logoImg.style.filter = 'brightness(0) invert(1)';
-                navLinks.forEach(link => {
-                    link.classList.add('lg:text-slate-200');
-                });
+                navLinks.forEach(l => l.classList.add('lg:text-slate-200'));
             }
+            navTicking = false;
         }
-
-        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('scroll', () => {
+            if (!navTicking) { requestAnimationFrame(updateNavbar); navTicking = true; }
+        }, { passive: true });
         updateNavbar();
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-        let isMenuOpen = false;
+        // ─── Mobile Menu ──────────────────────────────────────────────────────────
+        const menuBtn     = document.getElementById('mobile-menu-btn');
+        const mobileMenu  = document.getElementById('mobile-menu');
+        const menuIconEl  = document.getElementById('menu-icon');
+        const closeIconEl = document.getElementById('close-icon');
+        let menuOpen = false;
 
         function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.add('open');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.remove('open');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+            menuIconEl.classList.toggle('hidden', menuOpen);
+            closeIconEl.classList.toggle('hidden', !menuOpen);
+            menuBtn.setAttribute('aria-label', menuOpen ? 'Zatvori navigacijski izbornik' : 'Otvori navigacijski izbornik');
+            menuBtn.setAttribute('aria-expanded', menuOpen);
         }
-
         menuBtn.addEventListener('click', toggleMenu);
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMenu();
+        document.querySelectorAll('.mobile-nav-link').forEach(l =>
+            l.addEventListener('click', () => { if (menuOpen) toggleMenu(); })
+        );
+
+        // ─── Scroll Reveal (IntersectionObserver) ────────────────────────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal-up, .reveal-fade').forEach(el =>
+            revealObserver.observe(el)
+        );
+
+        // ─── Counters (GSAP) ──────────────────────────────────────────────────────
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const proxy  = { val: 0 };
+            gsap.to(proxy, {
+                val: target, duration: 2.5, ease: 'power2.out',
+                onUpdate()  { counter.textContent = Math.floor(proxy.val); },
+                onComplete(){ counter.textContent = target; },
+                scrollTrigger: { trigger: counter, start: 'top 80%', toggleActions: 'play none none none' }
             });
         });
 
-        // Scroll Reveal Animation using Intersection Observer
-        const revealElements = document.querySelectorAll('.reveal-up, .reveal-fade');
-
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    // observer.unobserve(entry.target); // Optional: if you only want to animate once
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 2500; // ms
-                    let startTime = null;
-
-                    const updateCounter = (timestamp) => {
-                        if (!startTime) startTime = timestamp;
-                        const progress = timestamp - startTime;
-                        const percentage = Math.min(progress / duration, 1);
-
-                        // Easing function: easeOutQuart
-                        const easeOutQuart = 1 - Math.pow(1 - percentage, 4);
-                        const currentCount = Math.floor(easeOutQuart * target);
-
-                        counter.innerText = currentCount;
-
-                        if (percentage < 1) {
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-
-                    requestAnimationFrame(updateCounter);
-                    observer.unobserve(counter);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => counterObserver.observe(counter));
-
-        // Project Carousel
+        // ─── Project Carousel ─────────────────────────────────────────────────────
         (function () {
-            const track = document.getElementById('proj-track');
-            const prevBtn = document.getElementById('proj-prev');
-            const nextBtn = document.getElementById('proj-next');
+            const track         = document.getElementById('proj-track');
+            const prevBtn       = document.getElementById('proj-prev');
+            const nextBtn       = document.getElementById('proj-next');
             const dotsContainer = document.getElementById('proj-dots');
             if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
 
             const items = Array.from(track.children);
             const count = items.length;
 
-            // Build dots
             items.forEach(function (_, i) {
                 const dot = document.createElement('button');
                 dot.className = 'h-2 w-2 rounded-full transition-colors ' + (i === 0 ? 'bg-blue-600' : 'bg-blue-200');
@@ -1090,60 +849,97 @@
                 dotsContainer.appendChild(dot);
             });
 
-            function itemWidth() {
-                return items[0].getBoundingClientRect().width + 20; // card + gap-5 (20px)
-            }
-
-            function scrollToIndex(index) {
-                track.scrollTo({ left: index * itemWidth(), behavior: 'smooth' });
-            }
+            function itemWidth()       { return items[0].getBoundingClientRect().width + 20; }
+            function scrollToIndex(i)  { track.scrollTo({ left: i * itemWidth(), behavior: 'smooth' }); }
 
             function updateUI() {
-                const scrollLeft = track.scrollLeft;
-                const w = itemWidth();
-                const currentIndex = Math.min(Math.round(scrollLeft / w), count - 1);
-                const dots = dotsContainer.querySelectorAll('button');
-                dots.forEach(function (dot, i) {
-                    dot.className = 'h-2 w-2 rounded-full transition-colors ' + (i === currentIndex ? 'bg-blue-600' : 'bg-blue-200');
+                const sl = track.scrollLeft, w = itemWidth();
+                const ci = Math.min(Math.round(sl / w), count - 1);
+                dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                    dot.className = 'h-2 w-2 rounded-full transition-colors ' + (i === ci ? 'bg-blue-600' : 'bg-blue-200');
                 });
-                prevBtn.disabled = scrollLeft < 5;
-                nextBtn.disabled = scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+                prevBtn.disabled = sl < 5;
+                nextBtn.disabled = sl + track.clientWidth >= track.scrollWidth - 5;
             }
 
-            prevBtn.addEventListener('click', function () {
-                track.scrollBy({ left: -itemWidth(), behavior: 'smooth' });
-            });
-            nextBtn.addEventListener('click', function () {
-                track.scrollBy({ left: itemWidth(), behavior: 'smooth' });
-            });
-
+            prevBtn.addEventListener('click', () => track.scrollBy({ left: -itemWidth(), behavior: 'smooth' }));
+            nextBtn.addEventListener('click', () => track.scrollBy({ left:  itemWidth(), behavior: 'smooth' }));
             track.addEventListener('scroll', updateUI, { passive: true });
             window.addEventListener('resize', updateUI);
             updateUI();
         })();
-    
-    // Cookie consent
-    (function () {
-        const banner    = document.getElementById("cookie-banner");
-        const acceptBtn = document.getElementById("accept-cookies");
-        const declineBtn = document.getElementById("decline-cookies");
-        if (!localStorage.getItem("cookieConsent")) {
-            gsap.fromTo(banner,
-                { y: 50, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out", delay: 1 }
-            );
-        }
-        function closeBanner(choice) {
-            localStorage.setItem("cookieConsent", choice);
-            gsap.to(banner, {
-                y: 30, autoAlpha: 0, duration: 0.5, ease: "power2.in",
-                onComplete: function () { banner.style.display = "none"; }
+
+        // ─── Cookie Consent ───────────────────────────────────────────────────────
+        (function () {
+            const banner     = document.getElementById('cookie-banner');
+            const acceptBtn  = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+            if (!localStorage.getItem('cookieConsent')) {
+                gsap.fromTo(banner,
+                    { y: 50, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', delay: 1 }
+                );
+            }
+            function closeBanner(choice) {
+                localStorage.setItem('cookieConsent', choice);
+                gsap.to(banner, {
+                    y: 30, autoAlpha: 0, duration: 0.5, ease: 'power2.in',
+                    onComplete() { banner.style.display = 'none'; }
+                });
+            }
+            acceptBtn.addEventListener('click',  () => closeBanner('accepted_all'));
+            declineBtn.addEventListener('click', () => closeBanner('essential_only'));
+        })();
+
+        // ─── Contact Form (Web3Forms) ─────────────────────────────────────────────
+        (function () {
+            const form          = document.getElementById('contact-form');
+            const successBox    = document.getElementById('form-success');
+            const errorBox      = document.getElementById('form-error');
+            const submitBtn     = document.getElementById('contact-submit');
+            const submitLabel   = document.getElementById('submit-label');
+            const submitArrow   = document.getElementById('submit-arrow');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const serviceSelect = document.getElementById('service-select');
+            const subjectField  = document.getElementById('form-subject');
+            if (!form) return;
+
+            serviceSelect.addEventListener('change', function () {
+                const val = this.value.trim();
+                subjectField.value = val ? 'UPIT: ' + val : 'UPIT: Odabir usluge';
             });
-        }
-        acceptBtn.addEventListener("click",  function () { closeBanner("accepted_all"); });
-        declineBtn.addEventListener("click", function () { closeBanner("essential_only"); });
-    })();
-</script>
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errorBox.classList.add('hidden');
+                submitBtn.disabled = true;
+                submitLabel.textContent = 'Šaljem...';
+                submitArrow.classList.add('hidden');
+                submitSpinner.classList.remove('hidden');
+
+                try {
+                    const res  = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        form.classList.add('hidden');
+                        successBox.classList.remove('hidden');
+                    } else {
+                        throw new Error('server');
+                    }
+                } catch (_) {
+                    errorBox.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitLabel.textContent = 'Pošalji upit';
+                    submitArrow.classList.remove('hidden');
+                    submitSpinner.classList.add('hidden');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
