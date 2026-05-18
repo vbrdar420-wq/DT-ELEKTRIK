@@ -1,12 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dtelektrik.hr/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/jake-struje.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/slabe-struje.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/videonadzor.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/alarmi-portafoni.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/gromobrani.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/odrzavanje.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/uvjeti-poslovanja.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://dtelektrik.hr/privacy-policy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+
+  <!-- Naslovnica -->
+  <url>
+    <loc>https://dt-elektrik.hr/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Usluge -->
+  <url>
+    <loc>https://dt-elektrik.hr/jake-struje.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/slabe-struje.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/videonadzor.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/alarmi-portafoni.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/gromobrani.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/odrzavanje.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Location stranice -->
+  <url>
+    <loc>https://dt-elektrik.hr/elektricar-zagreb.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/elektricar-velika-gorica.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/elektricar-zapresic.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/elektricar-samobor.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/elektricar-dugo-selo.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pravni dokumenti -->
+  <url>
+    <loc>https://dt-elektrik.hr/uvjeti-poslovanja.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://dt-elektrik.hr/privacy-policy.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

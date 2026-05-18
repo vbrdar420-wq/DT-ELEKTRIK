@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <script>document.documentElement.classList.remove('no-js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje – kuće, stanovi, poslovni prostori. Razvodne ploče, rasvjeta, mreže, kamere, portafoni, gromobrani. Kvalitetno i pošteno.">
-    <title>DT Elektrik | Vrhunske Elektroinstalacije | Domagoj Trčak</title>
+    <link rel="preload" as="image"
+      href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1280&auto=format&fit=crop"
+      imagesrcset="
+        https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=75&w=640&auto=format&fit=crop 640w,
+        https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1280&auto=format&fit=crop 1280w,
+        https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2669&auto=format&fit=crop 2669w"
+      imagesizes="100vw"
+      fetchpriority="high">
+    <meta name="description" content="DT Elektrik — ovlašteni električar za Zagreb i okolicu. Izvodimo elektroinstalacije jake i slabe struje, videonadzor, alarme, gromobrane. Brzo, pošteno, s garancijom.">
+    <title>Električar Zagreb | Elektroinstalacije | DT Elektrik</title>
 
     <!-- Canonical & Favicon -->
-    <link rel="canonical" href="https://dtelektrik.hr/">
+    <link rel="canonical" href="https://dt-elektrik.hr/">
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/logo-dt.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -17,10 +25,10 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dtelektrik.hr/">
-    <meta property="og:title" content="DT Elektrik | Vrhunske Elektroinstalacije | Domagoj Trčak">
-    <meta property="og:description" content="DT Elektrik izvodi sve vrste elektroinstalacija jake i slabe struje – kuće, stanovi, poslovni prostori. Razvodne ploče, rasvjeta, mreže, kamere, portafoni, gromobrani. Kvalitetno i pošteno.">
-    <meta property="og:image" content="https://dtelektrik.hr/images/og-image.jpg">
+    <meta property="og:url" content="https://dt-elektrik.hr/">
+    <meta property="og:title" content="Električar Zagreb | Elektroinstalacije | DT Elektrik">
+    <meta property="og:description" content="DT Elektrik — ovlašteni električar za Zagreb i okolicu. Izvodimo elektroinstalacije jake i slabe struje, videonadzor, alarme, gromobrane. Brzo, pošteno, s garancijom.">
+    <meta property="og:image" content="https://dt-elektrik.hr/images/og-image.jpg">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:site_name" content="DT Elektrik">
 
@@ -39,7 +47,7 @@
       "@context": "https://schema.org",
       "@type": "Electrician",
       "name": "DT Elektrik",
-      "url": "https://dtelektrik.hr/",
+      "url": "https://dt-elektrik.hr/",
       "telephone": "+385989236382",
       "email": "dtelektrik23@gmail.com",
       "founder": { "@type": "Person", "name": "Domagoj Trčak" },
@@ -50,19 +58,20 @@
         "addressLocality": "Marija Bistrica",
         "addressCountry": "HR"
       },
-      "areaServed": { "@type": "Country", "name": "Hrvatska" },
+      "areaServed": [
+        {"@type": "City", "name": "Zagreb"},
+        {"@type": "City", "name": "Velika Gorica"},
+        {"@type": "City", "name": "Zaprešić"},
+        {"@type": "City", "name": "Samobor"},
+        {"@type": "City", "name": "Dugo Selo"},
+        {"@type": "City", "name": "Sesvete"}
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
           "opens": "07:30",
           "closes": "15:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "00:00"
         }
       ],
       "sameAs": [
@@ -204,6 +213,7 @@
                     <a href="#usluge" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Usluge</a>
                     <a href="#o-nama" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">O nama</a>
                     <a href="#projekti" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Projekti</a>
+                    <a href="#podrucja" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Područja</a>
                     <a href="#kontakt" class="nav-link text-sm font-medium hover:text-blue-600 transition-colors text-slate-600 lg:text-slate-200">Kontakt</a>
                     <a href="#kontakt" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transform hover:-translate-y-0.5">
                         Zatraži ponudu
@@ -230,6 +240,7 @@
                 <a href="#usluge" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Usluge</a>
                 <a href="#o-nama" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">O nama</a>
                 <a href="#projekti" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Projekti</a>
+                <a href="#podrucja" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Područja</a>
                 <a href="#kontakt" class="mobile-nav-link block px-3 py-4 text-base font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-600 rounded-md">Kontakt</a>
                 <a href="#kontakt" class="mobile-nav-link block w-full text-center mt-4 bg-blue-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-blue-700">
                     Zatraži ponudu
@@ -267,7 +278,7 @@
 
                         <p class="text-lg sm:text-xl text-slate-300 mb-8 max-w-lg leading-relaxed reveal-up delay-200">
                             Jake i slabe struje, gromobrani, rasvjeta, mreže, kamere i alarmi – sve na jednom
-                            mjestu. Radimo pošteno, dolazimo na vrijeme i stojimo iza svakog posla.
+                            mjestu. Radimo pošteno, dolazimo na vrijeme i stojimo iza svakog posla. Pokrivamo Zagreb, Veliku Goricu, Zaprešić, Samobor i okolna područja.
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-4 reveal-up delay-300">
@@ -547,30 +558,225 @@
                 <div id="proj-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-5"
                      style="scrollbar-width:none;-ms-overflow-style:none;padding-left:max(1rem,calc((100vw - 80rem) / 2 + 2rem));padding-right:2rem;">
 
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/1.webp"  alt="LED rasvjeta u industrijskom prostoru"         width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/2.webp"  alt="Postavljanje kabelskih kanala u hali"           width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/3.webp"  alt="Postavljanje cijevi u temeljnoj ploči"          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/4.webp"  alt="Elektroinstalacije u novogradnji"               width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/5.webp"  alt="Razvod elektro cijevi po podu"                  width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/6.webp"  alt="Instalacija kružne rasvjete u povijesnoj zgradi" width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/7.webp"  alt="Rasvjeta u povijesnom prostoru"                  width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/8.webp"  alt="Instalacija javne rasvjete"                      width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/9.webp"  alt="Javna rasvjeta u parku"                          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/10.webp" alt="Elektroinstalacije pri izgradnji"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/11.webp" alt="Mrežni ormar s patch panel sustavom"             width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/12.webp" alt="Elektroinstalacije u industrijskoj hali"         width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/13.webp" alt="Kabelski kanali i rasvjeta u hali"               width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/14.webp" alt="Elektroinstalacije u stanu u izgradnji"          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/15.webp" alt="Priprema za ugradnju ugradnih svjetiljki"        width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/16.webp" alt="LED rasvjeta izložbenog elementa"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/17.webp" alt="Instalacija reklamnog natpisa"                   width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/18.webp" alt="Postavljanje LED traka na policu"                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/19.webp" alt="Završena polica s LED rasvjetom"                 width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
-                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/20.webp" alt="Elektroinstalacije u kuhinji"                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/1.webp"  alt="LED rasvjeta u industrijskoj hali, Zagreb"                        width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/2.webp"  alt="Montaža kabelskih kanala u poslovnom prostoru, Zagreb"             width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/3.webp"  alt="Postavljanje elektro cijevi u temeljnoj ploči, Zagreb"             width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/4.webp"  alt="Elektroinstalacije u novogradnji, Zagreb"                          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/5.webp"  alt="Razvod elektro cijevi po podu stana, Zagreb"                       width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/6.webp"  alt="Instalacija rasvjete u poslovnoj zgradi, Zagreb"                   width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/7.webp"  alt="Rasvjeta u poslovnom prostoru, Zagreb"                              width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/8.webp"  alt="Montaža javne rasvjete, Zagreb"                                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/9.webp"  alt="Javna rasvjeta u parku, Zagreb"                                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/10.webp" alt="Elektroinstalacije pri izgradnji objekta, Zagreb"                   width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/11.webp" alt="Mrežni ormar s patch panel sustavom, Zagreb"                        width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/12.webp" alt="Elektroinstalacije u industrijskoj hali, Zagreb"                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/13.webp" alt="Kabelski kanali i rasvjeta u hali, Zagreb"                          width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/14.webp" alt="Elektroinstalacije u stanu u izgradnji, Zagreb"                      width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/15.webp" alt="Priprema za ugradnju ugradnih svjetiljki, Zagreb"                    width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/16.webp" alt="LED rasvjeta izložbenog elementa, Zagreb"                           width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/17.webp" alt="Instalacija reklamnog natpisa, Zagreb"                               width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/18.webp" alt="Postavljanje LED traka, Zagreb"                                      width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/19.webp" alt="Završena LED rasvjeta police, Zagreb"                                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
+                    <div class="snap-start shrink-0 w-[300px] sm:w-[340px] lg:w-[380px]"><div class="rounded-2xl overflow-hidden aspect-square shadow-sm"><img src="images/projekti/20.webp" alt="Elektroinstalacije u kuhinji, Zagreb"                                width="380" height="380" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy"></div></div>
                 </div>
             </div>
 
             <div id="proj-dots" class="mt-8 flex justify-center gap-2 flex-wrap px-4"></div>
+        </section>
+
+        <!-- Područja -->
+        <section id="podrucja" class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-80 h-80 bg-blue-50 rounded-full blur-3xl -ml-20 -mt-20 opacity-60 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-14 reveal-up">
+                    <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3">Servisno područje</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Gdje radimo?</h2>
+                    <p class="text-slate-500 text-lg max-w-xl mx-auto">Pokrivamo Zagreb i čitavu okolicu — brz dolazak, poznavanje terena, pouzdana izvedba.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+                    <!-- Zagreb -->
+                    <a href="elektricar-zagreb.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-100">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Zagreb</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Izvodimo elektroinstalacije u stambenim i poslovnim objektima po cijelom Zagrebu, uključujući Novi Zagreb i zapadne dijelove grada.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Velika Gorica -->
+                    <a href="elektricar-velika-gorica.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-200">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Velika Gorica</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Pokrivamo Veliku Goricu i cijelo Turopolje — od obiteljskih kuća do poslovnih prostora.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Zaprešić -->
+                    <a href="elektricar-zapresic.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-300">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Zaprešić</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Brz dolazak i kvalitetna izvedba za klijente u Zaprešiću i okolnim naseljima.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Samobor -->
+                    <a href="elektricar-samobor.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-100">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Samobor</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Elektroinstalacije, gromobrani i videonadzor za Samobor i samoborsku okolicu.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Dugo Selo -->
+                    <a href="elektricar-dugo-selo.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-200">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Dugo Selo</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Pokrivamo Dugo Selo i istočnu zagrebačku okolicu — novogradnje i rekonstrukcije.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Sesvete -->
+                    <a href="elektricar-zagreb.html" class="group relative bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 reveal-up delay-300">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 mb-1">Sesvete</h3>
+                                <p class="text-sm text-slate-500 leading-relaxed">Radimo i u Sesvetama i okolnim naseljima kao dijelu šire zagrebačke regije.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-600" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- SEO paragraph -->
+                <p class="text-center text-slate-500 text-base max-w-2xl mx-auto leading-relaxed reveal-up">
+                    Kao ovlašteni električar pokrivamo Zagreb i cijelu okolicu — od centra i Novog Zagreba do zapadnih dijelova grada, Velike Gorice, Zaprešića, Samobora i Dugog Sela. Bez obzira gdje se nalazite, dolazimo na adresu i radimo pošteno.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-24 bg-slate-50 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -mr-20 -mb-20 opacity-50 pointer-events-none"></div>
+
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-14 reveal-up">
+                    <span class="text-blue-600 font-semibold tracking-wider uppercase text-sm block mb-3">Podrška</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Često postavljana pitanja</h2>
+                    <p class="text-slate-500 text-lg max-w-lg mx-auto">Imate pitanje? Vjerojatno je odgovor već ovdje.</p>
+                </div>
+
+                <div class="space-y-3 reveal-up delay-100" id="faq-list">
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Pokrivate li cijelo područje Zagreba?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Da, radimo po cijelom gradu — od centra, Novog Zagreba i zapadnih dijelova do Sesveta. Pokrivamo i širu okolicu: Veliku Goricu, Zaprešić, Samobor i Dugo Selo.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Koliko brzo možete doći?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Ovisno o terminu i vrsti posla, u pravilu se javljamo isti dan i dogovaramo dolazak što prije. Za hitne kvarove trudimo se reagirati u najkraćem mogućem roku.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Radite li i u stanovima i u poslovnim prostorima?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Da, radimo u kućama, stanovima, poslovnim prostorima i industrijskim objektima — i nova gradnja i rekonstrukcija postojećih instalacija.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Dajete li garanciju na izvedene radove?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Da, na sve izvedene radove dajemo garanciju. Stojimo iza svakog posla i dostupni smo ako se nešto pojavi nakon završetka.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Trebam li projekt ili dozvolu za elektroinstalacije?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Za manje radove poput zamjene osigurača, utičnica ili rasvjete projekt nije potreban. Za veće radove — novi razvodni ormari ili instalacije u novogradnji — projekt je potreban. Možemo vam savjetovati što točno treba za vaš slučaj.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                            <span class="font-semibold text-slate-900 text-base">Izvodite li i gromobrane?</span>
+                            <svg class="faq-chevron flex-shrink-0 w-5 h-5 text-blue-600 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-body overflow-hidden" style="max-height:0;transition:max-height 0.35s cubic-bezier(0.16,1,0.3,1)">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed text-sm">Da, projektiramo, izrađujemo i montiramo gromobransku zaštitu za kuće, poslovne i industrijske objekte prema važećim normama.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- Contact -->
@@ -685,12 +891,12 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
 
                 <div class="lg:col-span-1">
                     <img src="images/logo-dt.svg" alt="DT Elektrik" class="h-16 w-auto mb-6" style="filter: brightness(0) invert(1);">
                     <p class="text-slate-400 mb-6 leading-relaxed">
-                        Sve vrste elektroinstalacija jake i slabe struje za kuće, stanove i poslovne prostore. Pošteno, kvalitetno i na vrijeme.
+                        Sve vrste elektroinstalacija jake i slabe struje za kuće, stanove i poslovne prostore. Pošteno, kvalitetno i na vrijeme. Pokrivamo Zagreb i okolicu.
                     </p>
                 </div>
 
@@ -711,6 +917,17 @@
                         <li><a href="#projekti" class="text-slate-400 hover:text-blue-400 transition-colors">Projekti</a></li>
                         <li><a href="#kontakt"  class="text-slate-400 hover:text-blue-400 transition-colors">Kontakt</a></li>
                         <li><a href="/uvjeti-poslovanja.html" class="text-slate-400 hover:text-blue-400 transition-colors">Uvjeti poslovanja</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Područja</h4>
+                    <ul class="space-y-4">
+                        <li><a href="elektricar-zagreb.html" class="text-slate-400 hover:text-blue-400 transition-colors">Električar Zagreb</a></li>
+                        <li><a href="elektricar-velika-gorica.html" class="text-slate-400 hover:text-blue-400 transition-colors">Električar Velika Gorica</a></li>
+                        <li><a href="elektricar-zapresic.html" class="text-slate-400 hover:text-blue-400 transition-colors">Električar Zaprešić</a></li>
+                        <li><a href="elektricar-samobor.html" class="text-slate-400 hover:text-blue-400 transition-colors">Električar Samobor</a></li>
+                        <li><a href="elektricar-dugo-selo.html" class="text-slate-400 hover:text-blue-400 transition-colors">Električar Dugo Selo</a></li>
                     </ul>
                 </div>
 
@@ -827,6 +1044,34 @@
                 onUpdate()  { counter.textContent = Math.floor(proxy.val); },
                 onComplete(){ counter.textContent = target; },
                 scrollTrigger: { trigger: counter, start: 'top 80%', toggleActions: 'play none none none' }
+            });
+        });
+
+        // ─── FAQ Accordion ────────────────────────────────────────────────────────
+        document.querySelectorAll('.faq-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const item     = btn.closest('.faq-item');
+                const body     = item.querySelector('.faq-body');
+                const chevron  = btn.querySelector('.faq-chevron');
+                const isOpen   = btn.getAttribute('aria-expanded') === 'true';
+
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(function (other) {
+                    if (other === item) return;
+                    other.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+                    other.querySelector('.faq-body').style.maxHeight = '0';
+                    other.querySelector('.faq-chevron').style.transform = '';
+                });
+
+                if (isOpen) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    body.style.maxHeight = '0';
+                    chevron.style.transform = '';
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    chevron.style.transform = 'rotate(180deg)';
+                }
             });
         });
 
